@@ -83,6 +83,25 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.no-results {
+  position: relative;
+  left: 28%;
+  display: flex;
+  width: 40%;
+  padding-top: 10px;
+  flex-direction: column;
+  text-align: center;
+  border: 4px dashed gray;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+}
+
+.no-results li {
+  letter-spacing: 0.2rem;
+  text-align: start;
+}
+
 @media screen and (max-width: 992px) {
 
   .card img {
