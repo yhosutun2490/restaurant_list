@@ -102,6 +102,10 @@ header {
   text-align: start;
 }
 
+.card-title-en {
+  display: none;
+}
+
 @media screen and (max-width: 992px) {
 
   .card img {

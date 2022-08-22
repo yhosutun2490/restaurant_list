@@ -8,7 +8,13 @@ const exphbs = require('express-handlebars')
 const restaurantList = require('./restaurant.json').results
 // setting template engine and helper function
 app.engine('handlebars', exphbs({
-  defaultLayout: 'main'
+  defaultLayout: 'main',
+  helpers: {
+    titleLang: function (lang) {
+      if (lang === 'EN')
+        return true
+    }
+  }
 }))
 app.set('view engine', 'handlebars')
 // setting static files
@@ -46,7 +52,7 @@ app.get('/search', (req, res) => {
   else if (lang === 'EN') {
     results = restaurantList.filter(item => item.name_en.toLowerCase().includes(words))
   }
-  res.render('index', { restaurant: results, keyword: words })
+  res.render('index', { restaurant: results, keyword: words, langMode: lang })
 })
 // start and listen on the Express server
 app.listen(port, () => {
