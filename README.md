@@ -12,33 +12,31 @@
 ## 專案畫面
 
 ## Environment SetUp - 環境建置
-* Node.js  14.16.0
+* Node.js 14.16.0 ![image](https://user-images.githubusercontent.com/71853581/186109309-4445a220-eb06-47dc-bb8f-ff8529c202a1.png)
 * Express  4.16.4
 * Express-handle-bars 3.0.0
 
 ## Installing - 專案安裝流程
-#### 1.使用git打開你的專案資料夾 terminal，Clone 此專案至本機電腦
-git clone https://github.com/pierceshih15/restaurantList.git
-開啟終端機(Terminal)，進入存放此專案的資料夾
-cd restaurantList
-安裝 npm 套件
-在 Terminal 輸入 npm install 指令
-安裝 nodemon 套件
-在 Terminal 輸入 nodemon app.js 指令
-匯入種子檔案
-在 Terminal 找到 Seeder.js 檔案
+### 1.安裝 node.js 套件 (建議使用nvm下載管理node.js版本) NVM-Windows https://github.com/coreybutler/nvm-windows/releases
+```nvm install 14.16.0```
+### 2.檢查是否安裝成功並啟動Node.js
+```nvm use 14.16.0```    
+```node -v``` 檢查版本，初次使用git-bash 記得以管理員權限開啟使用才能顯示和啟動  
+### 3.開啟終端機(Terminal)，進入存放此專案的資料夾
+```cd restaurantList```
+### 4.使用git打開你的專案資料夾 terminal，Clone 此專案至本機電腦
+```git clone https://github.com/yhosutun2490/restaurant_list.git```
+### 5.初始化npm套件並安裝Express套件
+```npm init -y``` 初始化node_Module資料夾  
+```npm install express@4.16.4``` 安裝express套件
+###  6.安裝 nodemon 套件  
+```npm install nodemon -g``` 全域安裝至node.js
+### 7.執行app.js檔案
+```nodemon app.js```  
+如果出現Express is listening on http://localhost:3000 代表啟動成功~
 
-執行 node models/seeds/Seeder.js 匯入使用者與餐廳資料
-當 terminal 出現以下字樣，即表示種子資料已新增至資料庫，按下 ctrl + c 結束執行
 
-Mongodb is connected!
-
-User and Restaurant data get done!
-啟動伺服器，執行 app.js 檔案
-nodemon app.js
-當 terminal 出現以下字樣，表示伺服器與資料庫已啟動並成功連結
-The Express server is running on http://localhost:3000
-
-Mongodb is connected!
-
-## Future Development - 未來優化方向
+## Future Development - 未來 2.0 版優化方向
+1.特殊字元錯誤訊息能直接切換中英文  
+2.餐廳資料細節能直接轉換中英文   
+3.串接資料庫進行增修刪減()  
