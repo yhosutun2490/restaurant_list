@@ -12,9 +12,9 @@
 ## 專案畫面
 
 ## Environment SetUp - 環境建置
-* Node.js 14.16.0 ![image](https://user-images.githubusercontent.com/71853581/186109309-4445a220-eb06-47dc-bb8f-ff8529c202a1.png)
-* Express  4.16.4
-* Express-handle-bars 3.0.0
+* Node.js 14.16.0 ![image](https://camo.githubusercontent.com/b52d5b6da473bbff9ae4e68d34ff4ca91162732372c48dd541aa40eeeb97ecef/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f64652e6a732d7631342e31362e302d626c7565)
+* Express  4.16.4 ![image](https://camo.githubusercontent.com/3bd6a6dae2d65f93243cd289cd76704a303a4a1fb7b9c89912491393eaa9c01a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f457870726573732d76342e31362e342d626c7565) 
+* Express-handle-bars 3.0.0 ![image](https://camo.githubusercontent.com/db9711476e732447317d50897988d14d4553c0782b6aa11c27e799e483068048/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f457870726573732048616e646c65626172732d76332e302e302d626c7565)
 
 ## Installing - 專案安裝流程
 ### 1.安裝 node.js 套件 (建議使用nvm下載管理node.js版本) NVM-Windows https://github.com/coreybutler/nvm-windows/releases
@@ -32,7 +32,7 @@
 ###  6.安裝 nodemon 套件  
 ```npm install nodemon -g``` 全域安裝至node.js
 ### 7.執行app.js檔案
-```nodemon app.js```  
+```nodemon app.js``` or ```npm run dev``` 
 如果出現Express is listening on http://localhost:3000 代表啟動成功~
 
 
