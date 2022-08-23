@@ -46,8 +46,11 @@ function checkInputLanguage(word) {
 }
 // SearchBars
 app.get('/search', (req, res) => {
-  const words = String(req.query.keyword.toLowerCase().trim())
-  const lang = checkInputLanguage(words)
+  const words = req.query.keyword.toLowerCase().trim()
+  // remove initial special character 
+  const regexSep = /[^a-zA-z\u4e00-\u9fa5]/g
+  const removeSpecialCharacter = words.replace(regexSep, '')
+  const lang = checkInputLanguage(removeSpecialCharacter)
   let results = []
   // input is chinese return chinese filter results
   if (lang === 'CN') {

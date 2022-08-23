@@ -14,7 +14,10 @@
     <div class="search-bar-outer">
       <div class="search-bar-inner">
         <form action="/search">
-          <h4 class="mb-2">Search Your Restaurant：</h4>
+          <div class="search-title">
+            <h4 class="mb-2">Search Your Restaurant：</h4>
+            <p>We have: {{restaurant.length}} restaurants</p>
+          </div>
           <div class="input-group">
             <input type="text" name="keyword" class="form-control" placeholder="input name or category"
               aria-label="Restaurant Name..." value="{{keyword}}" aria-describedby="search-button">
@@ -58,7 +61,7 @@
       <h5><strong>Sorry&#x1F614;~No search results found </strong></h5>
       <h6><strong>&#10067;Possible Reasons&#10067;</strong></h6>
       <ul>
-        <li>The designated restaurant name has not been registered on this website&#127807;</li>
+        <li>The designated restaurant name has not been registered on our website&#127807;</li>
         <li>Keywords with mixed numbers or special character&#127807;</li>
         <li>You have not entered the specified keyword&#127807;</li>
       </ul>

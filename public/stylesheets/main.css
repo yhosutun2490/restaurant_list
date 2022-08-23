@@ -88,6 +88,10 @@ header {
   font-size: 3rem;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+.search-title{
+  display: flex;
+  justify-content: space-between;
+}
 
 .no-results {
   position: relative;
@@ -104,6 +108,7 @@ header {
 }
 
 .no-results li {
+  font-size: 0.9em;
   letter-spacing: 0.2rem;
   text-align: start;
 }
