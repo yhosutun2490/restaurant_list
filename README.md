@@ -29,7 +29,7 @@
 ```git clone https://github.com/yhosutun2490/restaurant_list.git```
 ### 5.初始化npm套件並安裝Express套件
 ```npm init -y``` 初始化node_Module資料夾  
-```npm install express@4.16.4``` 安裝express套件
+```npm install express@4.16.4``` 安裝express套件  
 ```npm install express-handle-bars@3.0.0``` 安裝樣版引擎
 ###  6.安裝 nodemon 套件  
 ```npm install nodemon -g``` 全域安裝至node.js
