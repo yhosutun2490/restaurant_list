@@ -14,10 +14,10 @@
     <div class="search-bar-outer">
       <div class="search-bar-inner">
         <form action="/search">
-          <h4 class="mb-2">尋找餐廳：</h4>
+          <h4 class="mb-2">Search Your Restaurant：</h4>
           <div class="input-group">
-            <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
-              value="{{keyword}}" aria-describedby="search-button">
+            <input type="text" name="keyword" class="form-control" placeholder="input name or category"
+              aria-label="Restaurant Name..." value="{{keyword}}" aria-describedby="search-button">
             <div class="input-group-append">
               <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
             </div>
@@ -38,16 +38,9 @@
             <div class="card mb-3">
               <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
               <div class="card-body p-3">
-                <h6 class="card-title mb-1">
-                  {{#if {{titleLang langMode}}}}
-                  {{this.name}}
-                  {{else}}
-                  {{this.name_en}}
-                  {{/if}}
-                </h6>
-                <em class="card-title-en mb-1">-{{this.name_en}}</em>
+                <h6 class="card-title mb-1">{{this.name_en}}</h6>
                 <div class="restaurant-category mb-1">
-                  <em class="fas fa-utensils pr-2"></em>{{this.category}}
+                  <em class="fas fa-utensils pr-2"></em>{{this.category_en}}
                 </div>
                 <span class="badge badge-pill badge-danger font-weight-normal">
                   {{this.rating}}
@@ -62,12 +55,12 @@
     </div>
     {{else}}
     <div class="no-results">
-      <h5><strong>深感致歉&#x1F614;~我們找不到您的搜尋餐廳內容</strong></h5>
-      <h6><strong>可能的原因&#10067;</strong></h6>
+      <h5><strong>Sorry&#x1F614;~No search results found </strong></h5>
+      <h6><strong>&#10067;Possible Reasons&#10067;</strong></h6>
       <ul>
-        <li>指定餐廳名稱尚未於本網站註冊&#127807;</li>
-        <li>關鍵字帶有混合中英文或夾雜數字&#127807;</li>
-        <li>您尚未輸入指定關鍵字&#127807;</li>
+        <li>The designated restaurant name has not been registered on this website&#127807;</li>
+        <li>Keywords with mixed numbers or special character&#127807;</li>
+        <li>You have not entered the specified keyword&#127807;</li>
       </ul>
     </div>
     {{/if}}

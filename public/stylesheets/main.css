@@ -11,6 +11,12 @@ header {
   color: #226089;
 }
 
+.lang-btn {
+  display: flex;
+  width: 10%;
+  justify-content: space-evenly;
+}
+
 .banner {
   position: relative;
   z-index: -1;
@@ -85,9 +91,9 @@ header {
 
 .no-results {
   position: relative;
-  left: 28%;
+  left: 25%;
   display: flex;
-  width: 40%;
+  width: 50%;
   padding-top: 10px;
   flex-direction: column;
   text-align: center;
@@ -100,10 +106,6 @@ header {
 .no-results li {
   letter-spacing: 0.2rem;
   text-align: start;
-}
-
-.card-title-en {
-  display: none;
 }
 
 @media screen and (max-width: 992px) {

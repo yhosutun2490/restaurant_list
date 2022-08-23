@@ -8,25 +8,30 @@ const exphbs = require('express-handlebars')
 const restaurantList = require('./restaurant.json').results
 // setting template engine and helper function
 app.engine('handlebars', exphbs({
-  defaultLayout: 'main',
-  helpers: {
-    titleLang: function (lang) {
-      if (lang === 'EN')
-        return true
-    }
-  }
+  defaultLayout: 'main'
 }))
 app.set('view engine', 'handlebars')
 // setting static files
 app.use(express.static('public'))
 // setting router
 app.get('/', (req, res) => {
-  res.render('index', { restaurant: restaurantList })
+  // default is chinese page
+  res.render('index_CN', { restaurant: restaurantList })
+})
+app.get('/lang/:language', (req, res) => {
+
+  if (req.params.language.toUpperCase() === "CN") {
+    res.render('index_CN', { restaurant: restaurantList })
+  }
+  if (req.params.language.toUpperCase() === "EN") {
+    res.render('index_EN', { restaurant: restaurantList })
+  }
 })
 app.get('/restaurants/:res_id', (req, res) => {
   const eachRestaurant = restaurantList.find(item => item.id === Number(req.params.res_id))
-  res.render('showRes', { restaurant: eachRestaurant })
+  res.render('showRes_CN', { restaurant: eachRestaurant })
 })
+// check input words is Chinese or English
 function checkInputLanguage(word) {
   const cnRegex = /[\u4e00-\u9fa5]/g
   const enRegex = /[a-zA-z]/g
@@ -41,18 +46,24 @@ function checkInputLanguage(word) {
 }
 // SearchBars
 app.get('/search', (req, res) => {
-  const words = req.query.keyword.toLowerCase().trim()
+  const words = String(req.query.keyword.toLowerCase().trim())
   const lang = checkInputLanguage(words)
   let results = []
   // input is chinese return chinese filter results
   if (lang === 'CN') {
     results = restaurantList.filter(item => item.name.includes(words) || item.category.includes(words))
+    res.render('index_CN', { restaurant: results, keyword: words })
   }
   // input is English return English filter results
   else if (lang === 'EN') {
-    results = restaurantList.filter(item => item.name_en.toLowerCase().includes(words))
+    results = restaurantList.filter(item => item.name_en.toLowerCase().includes(words) || item.category_en.toLowerCase().includes(words))
+    res.render('index_EN', { restaurant: results, keyword: words })
   }
-  res.render('index', { restaurant: results, keyword: words, langMode: lang })
+  // if input is not chinese or English redirect to Chinese No found Message
+  else {
+    res.render('index_CN', { restaurant: results, keyword: words })
+  }
+
 })
 // start and listen on the Express server
 app.listen(port, () => {

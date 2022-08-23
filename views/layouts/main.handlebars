@@ -25,9 +25,17 @@
         <a class="navbar-brand" href="/">
           <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png"
             width="30" height="30" class="d-inline-block align-top" alt="delicious">
-          我的餐廳清單
+          我的餐廳清單 (My Favorite Restaurant)
         </a>
-      </div>
+        <div class="lang-btn">
+          <form role="form" action='/lang/CN' method='GET'>
+            <button type="submit">CN</button>
+          </form>
+          <form role="form" action='/lang/EN' method='GET'>
+            <button type="submit">EN</button>
+          </form>
+        </div>
+
     </nav>
 
     <div class="banner"></div>
@@ -38,4 +46,3 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
     </body>
-  
