@@ -19,11 +19,10 @@ app.get('/', (req, res) => {
   res.render('index_CN', { restaurant: restaurantList })
 })
 app.get('/lang/:language', (req, res) => {
-
-  if (req.params.language.toUpperCase() === "CN") {
+  if (req.params.language.toUpperCase() === 'CN') {
     res.render('index_CN', { restaurant: restaurantList })
   }
-  if (req.params.language.toUpperCase() === "EN") {
+  if (req.params.language.toUpperCase() === 'EN') {
     res.render('index_EN', { restaurant: restaurantList })
   }
 })
@@ -47,14 +46,14 @@ function checkInputLanguage(word) {
 // SearchBars
 app.get('/search', (req, res) => {
   const words = req.query.keyword.toLowerCase().trim()
-  // remove initial special character 
+  // remove initial special character
   const regexSep = /[^a-zA-z\u4e00-\u9fa5]/g
   const removeSpecialCharacter = words.replace(regexSep, '')
   const lang = checkInputLanguage(removeSpecialCharacter)
   let results = []
   // input is chinese return chinese filter results
   if (lang === 'CN') {
-    results = restaurantList.filter(item => item.name.includes(words) || item.category.includes(words))
+    results = restaurantList.filter(item => item.name.includes(words) || item.category.includes(words) || item.location.includes(words))
     res.render('index_CN', { restaurant: results, keyword: words })
   }
   // input is English return English filter results
@@ -66,7 +65,6 @@ app.get('/search', (req, res) => {
   else {
     res.render('index_CN', { restaurant: results, keyword: words })
   }
-
 })
 // start and listen on the Express server
 app.listen(port, () => {
