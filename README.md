@@ -10,6 +10,7 @@
 * 檢視餐廳詳細資訊包含類別、地址、電話、評分、圖片及 Google Map
 
 ## 專案畫面
+<img width="667" alt="2-3-A1-1" src="https://user-images.githubusercontent.com/71853581/186174572-d52fd453-79b5-4623-92e2-48688333152a.png">
 
 ## Environment SetUp - 環境建置
 * Node.js 14.16.0 ![image](https://camo.githubusercontent.com/b52d5b6da473bbff9ae4e68d34ff4ca91162732372c48dd541aa40eeeb97ecef/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f64652e6a732d7631342e31362e302d626c7565)
