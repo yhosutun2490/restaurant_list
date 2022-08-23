@@ -1,28 +1,23 @@
-# 餐廳清單 1.0
+# 餐廳清單 1.0 基本款
 
 此專案提供使用者搜尋餐廳的資訊，例如:餐廳類別、餐點樣式、地址等
 
 ## 功能列表
-依照餐廳名稱及餐廳類別搜尋
-依照餐廳名稱、類別及地區排序
-檢視餐廳詳細資訊包含類別、地址、電話、評分、圖片及 Google Map
-點選Back返回首頁瀏覽全部餐廳資料
-點選Edit編輯此筆餐廳資料
-點選Delete刪除此筆餐廳資料
-點選 Google Map顯示詳細地圖可查看位置詳細資料
-點選Create新增餐廳包含上傳圖片、評分、類別、地址等資訊，Google Map 位置會依照輸入之地址產生
-點選 ✏️ 可編輯此餐廳資料
-點選 🗑️ 可刪除此餐廳資料
+* 首頁有中文、英文兩種版本，可點CN/EN模式切換
+* 搜尋框可以搜尋餐廳名稱、餐點類別或地區(目前僅限中文介面)
+* 搜尋框特殊字元處理或找不到餐廳資料時，會導向錯誤訊息頁面
+* 搜尋輸入字串會自動判別為中英文，會導向中(英)文餐廳搜尋清單，和符合您條件的餐廳數目
+* 檢視餐廳詳細資訊包含類別、地址、電話、評分、圖片及 Google Map
 
 ## 專案畫面
 
 ## Environment SetUp - 環境建置
-Node.js
-Express
-Express-handle-bars
+* Node.js  14.16.0
+* Express  4.16.4
+* Express-handle-bars 3.0.0
 
 ## Installing - 專案安裝流程
-打開你的 terminal，Clone 此專案至本機電腦
+#### 1.使用git打開你的專案資料夾 terminal，Clone 此專案至本機電腦
 git clone https://github.com/pierceshih15/restaurantList.git
 開啟終端機(Terminal)，進入存放此專案的資料夾
 cd restaurantList
@@ -45,3 +40,5 @@ nodemon app.js
 The Express server is running on http://localhost:3000
 
 Mongodb is connected!
+
+## Future Development - 未來優化方向
