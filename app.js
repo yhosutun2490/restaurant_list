@@ -1,4 +1,5 @@
 // Required framework in the project
+const { Router } = require('express')
 const express = require('express')
 const app = express()
 const port = 3000
@@ -51,36 +52,26 @@ app.get('/restaurants/:res_id', (req, res) => {
 function resetFilterResults() {
   filterData.results = []
 }
-// check input words is Chinese or English
-function checkInputLanguage(word) {
-  const cnRegex = /[\u4e00-\u9fa5]/g
-  const enRegex = /[a-zA-z]/g
-  if (word.length !== 0) {
-    if ((word.match(cnRegex)) && (word.match(cnRegex).length > 0)) {
-      return 'CN'
-    }
-    if (word.match(enRegex).length > 0) {
-      return 'EN'
-    }
-  }
-}
-// SearchBars
-app.get('/search', (req, res) => {
-  const words = req.query.keyword.toLowerCase().trim()
-  // remove initial special character
-  const regexSep = /[^a-zA-z\u4e00-\u9fa5]/g
-  const removeSpecialCharacter = words.replace(regexSep, '')
-  const lang = checkInputLanguage(removeSpecialCharacter)
 
+// SearchBars
+app.get('/search/:lang', (req, res) => {
+  const words = req.query.keyword.toLowerCase().trim()
+  // remove special character
+  const regexSep = /[^a-zA-z\u4e00-\u9fa5]/g
+  // return null if words is all special character
+  let removeSpecialCharacter = words.replace(regexSep, '')
+  if (!removeSpecialCharacter) {
+    removeSpecialCharacter = 'null'
+  }
   // input is chinese return chinese filter results
-  if (lang === 'CN') {
-    filterData.results = restaurantList.filter(item => item.name.includes(words) || item.category.includes(words) || item.location.includes(words))
+  if (req.params.lang === 'CN') {
+    filterData.results = restaurantList.filter(item => item.name.includes(removeSpecialCharacter) || item.category.includes(removeSpecialCharacter) || item.location.includes(removeSpecialCharacter))
     res.render('index_CN', { restaurant: filterData.results, keyword: words })
     readMode = "Chinese"
   }
   // input is English return English filter results
-  else if (lang === 'EN') {
-    filterData.results = restaurantList.filter(item => item.name_en.toLowerCase().includes(words) || item.category_en.toLowerCase().includes(words) || item.location_en.toLowerCase().includes(words))
+  else if (req.params.lang === 'EN') {
+    filterData.results = restaurantList.filter(item => item.name_en.toLowerCase().includes(removeSpecialCharacter) || item.category_en.toLowerCase().includes(removeSpecialCharacter) || item.location_en.toLowerCase().includes(removeSpecialCharacter))
     res.render('index_EN', { restaurant: filterData.results, keyword: words })
     readMode = "English"
   }
