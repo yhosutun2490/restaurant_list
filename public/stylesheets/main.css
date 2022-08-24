@@ -88,7 +88,8 @@ header {
   font-size: 3rem;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.search-title{
+
+.search-title {
   display: flex;
   justify-content: space-between;
 }
@@ -112,6 +113,15 @@ header {
   letter-spacing: 0.2rem;
   text-align: start;
 }
+
+.card-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 30%;
+  grid-auto-rows: 30%;
+  gap: 20px;
+}
+
 
 @media screen and (max-width: 992px) {
 
