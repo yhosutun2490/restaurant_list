@@ -38,7 +38,5 @@
 如果出現Express is listening on http://localhost:3000 代表啟動成功~
 
 
-## Future Development - 未來 2.0 版優化方向
-1.特殊字元錯誤訊息能直接切換中英文  
-2.餐廳資料細節能直接轉換中英文   
-3.串接資料庫進行增修刪減(CRUD)  
+## Future Development - 未來 2.0 版優化方向 
+1.串接資料庫進行增修刪減(CRUD)  
